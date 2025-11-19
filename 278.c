@@ -1,0 +1,20 @@
+/* Write a function to find lcm of two numbers */
+#include <stdio.h>
+
+int gcd(int a,int b){
+    while(b){
+        int t=b;
+        b=a%b;
+        a=t;
+    }
+    return a;
+}
+
+int lcm(int a,int b){
+    return (a*b)/gcd(a,b);
+}
+
+int main(){
+    printf("%d", lcm(12,18));
+    return 0;
+}
